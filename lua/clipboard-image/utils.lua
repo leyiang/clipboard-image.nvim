@@ -118,10 +118,11 @@ end
 ---Insert image's path with affix
 ---TODO: Probably need better description
 M.insert_txt = function(affix, path_txt)
+  vim.notify(path_txt)
   local curpos = vim.fn.getcurpos()
   local line_num, line_col = curpos[2], curpos[3]
   local indent = string.rep(" ", line_col)
-  local txt_topaste = string.format(affix, path_txt)
+  local txt_topaste = string.format(affix,path_txt)
 
   ---Convert txt_topaste to lines table so it can handle multiline string
   local lines = {}
