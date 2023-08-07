@@ -15,7 +15,7 @@ lua require'clipboard-image'.setup()
 let g:clipboard_image_loaded = 1
 
 " Create vim command
-command! PasteImg :lua require'clipboard-image.paste'.paste_img()
+command! Pimg :lua require'clipboard-image.paste'.paste_img()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
