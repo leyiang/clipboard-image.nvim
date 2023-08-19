@@ -24,6 +24,13 @@ M.paste_img = function(opts)
 
     utils.insert_txt(conf.affix, path_txt)
 
+    -- Save File
+    buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_call(buf, function()
+        vim.cmd("silent! write")
+    end)
+    -- Save File
+
     if type(conf.img_handler) == "function" then
       conf.img_handler {
         name = conf.img_name,
